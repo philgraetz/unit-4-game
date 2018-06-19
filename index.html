@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RPG</title>
+      
+        <!-- Added link to the jQuery Library -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      
+      </head>
+<body>
+    <div id="gameArea">
+        <!-- Game Title -->
+        <div id="gameTitle">RPG!</div>
+
+        <!-- Character Label -->
+        <div class="textLabel" id="charcterLabel">Your Character</div>
+
+        <!-- Character List -->
+        <div id="characterImgList" class="imgList clearfix">
+            <div class="imgBox cloakingDevice" id="characterImgBox1">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank1.png" alt="Blank1" class="characterImg" id="character1">
+                <div class="imgBoxFooter">000</div>
+            </div>
+            <div class="imgBox cloakingDevice" id="characterImgBox2">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank2.png" alt="Blank2" class="characterImg" id="character2">
+                <div class="imgBoxFooter">000</div>
+            </div>
+            <div class="imgBox cloakingDevice" id="characterImgBox3">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank3.png" alt="Blank3" class="characterImg" id="character3">
+                <div class="imgBoxFooter">000</div>
+            </div>
+            <div class="imgBox cloakingDevice" id="characterImgBox4">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank4.png" alt="Blank4" class="characterImg" id="character4">
+                <div class="imgBoxFooter">000</div>
+            </div>
+        </div>
+
+        <!-- Enemies Label -->
+        <div class="textLabel" id="enemiesLabel">Enemies Available To Attack</div>
+
+        <!-- Enemies Images -->
+        <div id="enemyImgList" class="imgList clearfix">
+            <div class="imgBox cloakingDevice" id="enemyImgBox1">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank1.png" alt="Blank1" class="characterImg" id="character1">
+                <div class="imgBoxFooter">000</div>
+            </div>
+            <div class="imgBox cloakingDevice" id="enemyImgBox2">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank2.png" alt="Blank2" class="characterImg" id="character2">
+                <div class="imgBoxFooter">000</div>
+            </div>
+            <div class="imgBox cloakingDevice" id="enemyImgBox3">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank3.png" alt="Blank3" class="characterImg" id="character3">
+                <div class="imgBoxFooter">000</div>
+            </div>
+        </div>
+
+        <!-- Fight Section -->
+        <div class="textLabel" id="fightSectionText">Fight Section</div>
+        <button type="button" class="gameButton" id="attackBtn">Attack</button>
+
+        <!-- Defender Label -->
+        <div class="textLabel" id="defenderLabel">Defender</div>
+
+        <!-- Defender image -->
+        <div id="defenderImgList" class="clearfix">
+            <div class="imgBox cloakingDevice" id="defenderImgBox1">
+                <div class="imgBoxHeader">Blank1</div>
+                <img src="assets/images/Blank1.png" alt="Blank1" class="characterImg" id="character1">
+                <div class="imgBoxFooter">000</div>
+            </div>
+        </div>
+        
+        <!-- Game Status Messages -->
+        <div class="textLabel" id="statusMessage">Status messages<br> here</div>
+            <button type="button" class="gameButton" id="restartBtn">Restart</button>
+        </div>
+
+    </div>
+    
+
+
+    <!-- This game JavaScript -->
+    <script src="assets/javascript/game.js"></script>
+
+    <!-- Document Ready -->
+    <!-- Set up callbacks -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            controller = rpgController;
+            controller.startGame();
+
+            $("#attackBtn").click(function() {
+                controller.attack();
+            });
+            $("#restartBtn").click(function() {
+                console.log("restart click");
+                controller.restart();
+            });
+            // $(".imgBox").click(function() {
+            //     controller.imgClick($(this));
+            // });
+        });
+    </script>
+</body>
+</html>
