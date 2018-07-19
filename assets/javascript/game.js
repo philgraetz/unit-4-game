@@ -165,7 +165,7 @@ rpgController = {
         this.defender.updateHealthDisplay();
         if (this.defender.healthPoints <= 0) {
             if (this.enemyList.length === 0) {
-                this.state == "YOU_WON";
+                this.state = "YOU_WON";
                 this.finishGame();
                 return;
             }
